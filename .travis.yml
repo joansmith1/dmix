@@ -1,21 +1,12 @@
+---
 language: android
 jdk: oraclejdk8
-
 android:
   components:
-    - build-tools-22.0.1
-    - doc-22
-
-    - android-22
-
-    # Additional components
-    - extra-android-m2repository
-    - extra-android-support
-
-# This project doesn't support checkConnected, which is
-#  the default script label for the Android plugin.
-script:
-    ## Build the standard MPDroid distribution and check to
-    ### make sure the plain Java build didn't break.
-
-    ./gradlew assembleFossDebug JMPDCommAndroid:debugJavadoc JMPDCommAndroid:test JMPDCommJava:Build JMPDCommJava:javadoc JMPDCommJava:test
+  - build-tools-22.0.1
+  - doc-22
+  - android-22
+  - extra-android-m2repository
+  - extra-android-support
+script: "./gradlew assembleFossDebug JMPDCommAndroid:debugJavadoc JMPDCommAndroid:test
+  JMPDCommJava:Build JMPDCommJava:javadoc JMPDCommJava:test"
